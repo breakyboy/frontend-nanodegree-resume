@@ -78,3 +78,27 @@ var work = {
   ],
   display: function() {}
 };
+
+var projects = {
+  projects: [
+    {
+      title: "Stackadmin",
+      dates: "2015",
+      description: "Gem to facilitate administration of Stackato deployments",
+      images: ["images/stackadmin.png"]
+    },
+    {
+      title: "CouchDB Service Broker for Cloud Foundry v2",
+      dates: "2014",
+      description: "This application sets up a Cloud Foundry v2 service broker to provide access to a CouchDB server",
+      images: ["images/cfv2-couchdb.png"]
+    },
+    {
+      title: "Bitcoin Printer",
+      dates: "2013",
+      description: "A quick and dirty port of Carlos Bueno's bitcoin-printer python script, which generates \"paper Bitcoins\" which contain one-time-use keypairs and Bitcoin payment addresses.",
+      images: ["images/bitcoin-printer.jpg"]
+    }
+  ],
+  display: function() {}
+};
