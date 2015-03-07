@@ -14,7 +14,7 @@ var bio = {
     "Cloud Infrastructure Automation",
     "Continuous Integration / Continuous Deployment"
   ],
-  biopic: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/7/000/231/2af/029918f.jpg",
+  biopic: "images/biopic.jpg",
   display: function() {}
 };
 
