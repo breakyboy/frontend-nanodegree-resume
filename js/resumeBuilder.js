@@ -110,7 +110,6 @@ var work = {
   ],
   display: function() {
     $("#workExperience").append(HTMLworkStart);
-
     for (var i in work.jobs) {
       var job = work.jobs[i];
 
@@ -152,8 +151,33 @@ var projects = {
       images: ["images/bitcoin-printer.jpg"]
     }
   ],
-  display: function() {}
+  display: function() {
+    for (var i in projects.projects) {
+      var project = projects.projects[i];
+
+      // Formatting
+      var title = HTMLprojectTitle.replace("%data%", project.title);
+      var dates = HTMLprojectDates.replace("%data%", project.dates);
+      var desc  = HTMLprojectDescription.replace("%data%", project.description);
+
+      // Display
+      $("#projects").append(HTMLprojectStart);
+      $(".project-entry:last").append(title);
+      $(".project-entry:last").append(dates);
+      $(".project-entry:last").append(desc);
+
+      // Images
+      for (var j in project.images) {
+        // Formatting
+        var image = HTMLprojectImage.replace("%data%", project.images[j]);
+
+        // Display
+        $(".project-entry:last").append(image);
+      }
+    }
+  }
 };
 
 bio.display();
 work.display();
+projects.display();
