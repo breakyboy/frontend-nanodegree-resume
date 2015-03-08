@@ -108,7 +108,27 @@ var work = {
       description: "<ul><li>Assisted in the development of Windows-based kiosks</li><li>Provided remote technical support for clients at sea</li><li>Developed and deployed a LAMP-based internal wiki</li></ul>"
     }
   ],
-  display: function() {}
+  display: function() {
+    $("#workExperience").append(HTMLworkStart);
+
+    for (var i in work.jobs) {
+      var job = work.jobs[i];
+
+      // Formatting
+      var employer = HTMLworkEmployer.replace("%data%", job.employer);
+      var title    = HTMLworkTitle.replace("%data%", job.title);
+      var dates    = HTMLworkDates.replace("%data%", job.dates);
+      var loc      = HTMLworkLocation.replace("%data%", job.location);
+      var desc     = HTMLworkDescription.replace("%data%", job.description);
+
+      // Display
+      $(".work-entry").append(employer);
+      $(".work-entry").append(title);
+      $(".work-entry").append(dates);
+      $(".work-entry").append(loc);
+      $(".work-entry").append(desc);
+    }
+  }
 };
 
 var projects = {
@@ -136,3 +156,4 @@ var projects = {
 };
 
 bio.display();
+work.display();
