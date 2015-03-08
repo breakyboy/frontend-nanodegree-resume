@@ -15,7 +15,39 @@ var bio = {
     "Continuous Integration / Continuous Deployment"
   ],
   biopic: "images/biopic.jpg",
-  display: function() {}
+  display: function() {
+    // Formatting
+    var name    = HTMLheaderName.replace("%data%", bio.name);
+    var role    = HTMLheaderRole.replace("%data%", bio.role);
+    var mobile  = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var email   = HTMLemail.replace("%data%", bio.contacts.email);
+    var twitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var github  = HTMLgithub.replace("%data%", bio.contacts.github);
+    var loc     = HTMLlocation.replace("%data%", bio.contacts.location);
+    var pic     = HTMLbioPic.replace("%data%", bio.biopic);
+    var msg     = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+    // Display
+    $("#header").prepend(name);
+    $("#name").after(role);
+    $("#topContacts").append(mobile);
+    $("#topContacts").append(email);
+    $("#topContacts").append(twitter);
+    $("#topContacts").append(github);
+    $("#topContacts").append(loc);
+    $("#header").append(pic);
+    $("#header").append(msg);
+    $("#header").append(HTMLskillsStart);
+
+    // Skills
+    for (var i in bio.skills) {
+      // Formatting
+      skill = HTMLskills.replace("%data%", bio.skills[i]);
+
+      // Display
+      $("#skills").append(skill);
+    }
+  }
 };
 
 var education = {
@@ -102,3 +134,5 @@ var projects = {
   ],
   display: function() {}
 };
+
+bio.display();
