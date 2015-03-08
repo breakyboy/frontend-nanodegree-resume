@@ -109,7 +109,6 @@ var work = {
     }
   ],
   display: function() {
-    $("#workExperience").append(HTMLworkStart);
     for (var i in work.jobs) {
       var job = work.jobs[i];
 
@@ -121,11 +120,12 @@ var work = {
       var desc     = HTMLworkDescription.replace("%data%", job.description);
 
       // Display
-      $(".work-entry").append(employer);
-      $(".work-entry").append(title);
-      $(".work-entry").append(dates);
-      $(".work-entry").append(loc);
-      $(".work-entry").append(desc);
+      $("#workExperience").append(HTMLworkStart);
+      $(".work-entry:last").append(employer);
+      $(".work-entry:last").append(title);
+      $(".work-entry:last").append(dates);
+      $(".work-entry:last").append(loc);
+      $(".work-entry:last").append(desc);
     }
   }
 };
