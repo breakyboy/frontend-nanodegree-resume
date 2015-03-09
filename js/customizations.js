@@ -32,3 +32,28 @@ twitter = $("span:contains('twitter')").next();
 if (twitter.text()[0] !== "@") {
   twitter.text("@" + twitter.text());
 }
+
+
+// Add appropriate hrefs to existing links
+var changeHref = function(text, href) {
+  var selector = "a:contains('" + text + "')";
+  $(selector).attr("href", href);
+};
+
+changeHref("MTN Satellite Communications", "http://www.mtnsat.com");
+changeHref("Stackadmin", "http://rubygems.org/gems/stackadmin");
+changeHref("CouchDB Service Broker", "http://github.com/andres-rojas/cfv2-couchdb-service-broker");
+changeHref("Bitcoin Printer", "http://github.com/andres-rojas/bitcoin-printer-ruby");
+changeHref("Miami Dade College", "http://www.mdc.edu/");
+changeHref("Florida International University", "http://www.fiu.edu");
+
+
+// Fix online courses links
+var onlineCourseLinks = $("#education h3 ~ .education-entry > a");
+onlineCourseLinks.each(function(i) {
+  if (i % 2 === 0) {
+    $(this).attr("href", onlineCourseLinks[i + 1].text);
+  } else {
+    $(this).remove();
+  }
+});
