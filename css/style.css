@@ -220,3 +220,7 @@ span {
   max-height: 200px;
   max-width: 250px;
 }
+
+#education h3 {
+  padding-top: 25px;
+}
