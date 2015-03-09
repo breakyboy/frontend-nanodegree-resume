@@ -69,7 +69,7 @@ var education = {
       majors: [
         "Computer Science"
       ],
-      dates: 0,   // Interpret as 'Coursework not completed'
+      dates: 0,   // Interpret as 'Coursework not yet completed'
       url: "http://www.fiu.edu/"
     }
   ],
@@ -77,11 +77,42 @@ var education = {
     {
       title: "Front-End Web Developer Nanodegree",
       school: "Udacity",
-      date: 0,   // Interpret as 'Coursework not completed'
+      date: 0,   // Interpret as 'Coursework not yet completed'
       url: "https://www.udacity.com/course/nd001"
     }
   ],
-  display: function() {}
+  display: function() {
+    // Schools
+    for (var i in education.schools) {
+      var school = education.schools[i];
+
+      // Formatting
+      var name = HTMLschoolName.replace("%data%", school.name);
+      var degree = HTMLschoolDegree.replace("%data%", school.degree);
+      var loc = HTMLschoolLocation.replace("%data%", school.location);
+      var dates = school.dates;
+      if (dates === 0) {
+        dates = "Coursework not yet completed";
+      }
+      dates = HTMLschoolDates.replace("%data%", dates);
+
+      // Display
+      $("#education").append(HTMLschoolStart);
+      $(".education-entry:last").append(name);
+      $(".education-entry:last").append(degree);
+      $(".education-entry:last").append(dates);
+      $(".education-entry:last").append(loc);
+
+      // Majors
+      for (var j in school.majors) {
+        // Formatting
+        var major = HTMLschoolMajor.replace("%data%", school.majors[j]);
+
+        // Display
+        $(".education-entry:last").append(major);
+      }
+    }
+  }
 };
 
 var work = {
@@ -181,3 +212,4 @@ var projects = {
 bio.display();
 work.display();
 projects.display();
+education.display();
