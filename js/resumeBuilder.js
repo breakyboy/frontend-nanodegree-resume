@@ -32,12 +32,13 @@ var bio = {
     $("#name").after(role);
     $("#topContacts").append(mobile);
     $("#topContacts").append(email);
-    $("#topContacts").append(twitter);
-    $("#topContacts").append(github);
     $("#topContacts").append(loc);
     $("#header").append(pic);
     $("#header").append(msg);
     $("#header").append(HTMLskillsStart);
+    $("#footerContacts").append(twitter);
+    $("#footerContacts").append(email);
+    $("#footerContacts").append(github);
 
     // Skills
     for (var i in bio.skills) {
