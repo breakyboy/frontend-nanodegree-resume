@@ -6,9 +6,9 @@ var bio = {
     email: "andres@consumingpatience.com",
     github: "andres-rojas",
     twitter: "breakyboy",
-    location: "Miramar"
+    location: "Lauderhill, FL"
   },
-  welcomeMessage: "lorem ipsum dolor sit amet etc etc etc",
+  welcomeMessage: "Looking for a sound to drown out the world",
   skills: [
     "Ruby Developer",
     "Cloud Infrastructure Automation",
@@ -137,7 +137,7 @@ var work = {
       title: "DevOps Engineer",
       location: "Miramar, FL",
       dates: "2012 - Present",
-      description: "<ul><li>Automated deployment of various PaaS platforms (i.e. Stackato, Cloud Foundry, AppFog) on to 20 seven-node bare metal clusters, and three multi-node AWS clusters</li><li>Developed custom automation tools using Ruby, Bash, Chef & Razor</li><li>Set up and administered AWS services, including EC2, VPC, S3, Route 53 & RDS</li><li>First place in the company's first annual Hackathon</li></ul>"
+      description: "<ul><li>Automated deployment of various PaaS platforms (i.e. Stackato, Cloud Foundry, AppFog) to 20 seven-node bare metal clusters, and three multi-node AWS clusters</li><li>Developed custom automation tools using Ruby, Bash, Chef & Razor</li><li>Set up and administered AWS services, including EC2, VPC, S3, Route 53 & RDS</li><li>First place in the company's first annual Hackathon</li></ul>"
     },
     {
       employer: "MTN Satellite Communications",

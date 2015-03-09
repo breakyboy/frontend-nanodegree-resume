@@ -15,7 +15,7 @@ var emailHref = "mailto:" + email.first().text();
 linkify(email, contactLinkClasses, emailHref);
 
 var loc = $("span:contains('location')").next();
-var locHref = "http://goo.gl/GJsdoq";
+var locHref = "http://goo.gl/JlW38E";
 linkify(loc, contactLinkClasses, locHref);
 
 var twitter = $("span:contains('twitter')").next();
