@@ -99,8 +99,7 @@ var education = {
 
       // Display
       $("#education").append(HTMLschoolStart);
-      $(".education-entry:last").append(name);
-      $(".education-entry:last").append(degree);
+      $(".education-entry:last").append(name + degree);
       $(".education-entry:last").append(dates);
       $(".education-entry:last").append(loc);
 
@@ -132,8 +131,7 @@ var education = {
 
       // Display
       $("#education").append(HTMLschoolStart);
-      $(".education-entry:last").append(title);
-      $(".education-entry:last").append(oSchool);
+      $(".education-entry:last").append(title + oSchool);
       $(".education-entry:last").append(oDates);
       $(".education-entry:last").append(url);
     }
