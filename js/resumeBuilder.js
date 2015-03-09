@@ -204,7 +204,10 @@ var projects = {
       title: "Bitcoin Printer",
       dates: "2013",
       description: "A quick and dirty port of Carlos Bueno's bitcoin-printer python script, which generates \"paper Bitcoins\" which contain one-time-use keypairs and Bitcoin payment addresses.",
-      images: ["images/bitcoin-printer.jpg"]
+      images: [
+        "images/bitcoin-printer-front.jpg",
+        "images/bitcoin-printer-back.jpg"
+      ]
     }
   ],
   display: function() {
