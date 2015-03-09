@@ -224,3 +224,8 @@ span {
 #education h3 {
   padding-top: 25px;
 }
+
+.contact-link {
+  display: inline;
+  padding: 5px;
+}
