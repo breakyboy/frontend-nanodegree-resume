@@ -63,3 +63,11 @@ onlineCourseLinks.each(function(i) {
 var banner = $("#letsConnect h2");
 banner.removeClass("orange");
 banner.addClass("navy");
+
+
+// If date-text is 0, set to "Coursework not yet completed"
+$(".date-text").each(function() {
+  if ($(this).text() === "0") {
+    $(this).text("Coursework not yet completed");
+  }
+});

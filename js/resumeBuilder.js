@@ -91,11 +91,7 @@ var education = {
       var name   = HTMLschoolName.replace("%data%", school.name);
       var degree = HTMLschoolDegree.replace("%data%", school.degree);
       var loc    = HTMLschoolLocation.replace("%data%", school.location);
-      var dates  = school.dates;
-      if (dates === 0) {
-        dates = "Coursework not yet completed";
-      }
-      dates = HTMLschoolDates.replace("%data%", dates);
+      var dates  = HTMLschoolDates.replace("%data%", school.dates);
 
       // Display
       $("#education").append(HTMLschoolStart);
@@ -123,11 +119,7 @@ var education = {
       var title   = HTMLonlineTitle.replace("%data%", course.title);
       var oSchool = HTMLonlineSchool.replace("%data%", course.school);
       var url     = HTMLonlineURL.replace("%data%", course.url);
-      var oDates  = course.date;
-      if (oDates === 0) {
-        oDates = "Coursework not yet completed";
-      }
-      oDates = HTMLonlineDates.replace("%data%", oDates);
+      var oDates  = HTMLonlineDates.replace("%data%", course.date);
 
       // Display
       $("#education").append(HTMLschoolStart);
