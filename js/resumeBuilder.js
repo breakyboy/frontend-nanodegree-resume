@@ -87,10 +87,10 @@ var education = {
       var school = education.schools[i];
 
       // Formatting
-      var name = HTMLschoolName.replace("%data%", school.name);
+      var name   = HTMLschoolName.replace("%data%", school.name);
       var degree = HTMLschoolDegree.replace("%data%", school.degree);
-      var loc = HTMLschoolLocation.replace("%data%", school.location);
-      var dates = school.dates;
+      var loc    = HTMLschoolLocation.replace("%data%", school.location);
+      var dates  = school.dates;
       if (dates === 0) {
         dates = "Coursework not yet completed";
       }
@@ -111,6 +111,30 @@ var education = {
         // Display
         $(".education-entry:last").append(major);
       }
+    }
+
+    // Online Courses
+    $("#education").append(HTMLonlineClasses);
+
+    for (var k in education.onlineCourses) {
+      var course = education.onlineCourses[k];
+
+      // Formatting
+      var title   = HTMLonlineTitle.replace("%data%", course.title);
+      var oSchool = HTMLonlineSchool.replace("%data%", course.school);
+      var url     = HTMLonlineURL.replace("%data%", course.url);
+      var oDates  = course.date;
+      if (oDates === 0) {
+        oDates = "Coursework not yet completed";
+      }
+      oDates = HTMLonlineDates.replace("%data%", oDates);
+
+      // Display
+      var onlineClasses = $("#education > h3:last");
+      onlineClasses.append(title);
+      onlineClasses.append(oSchool);
+      onlineClasses.append(oDates);
+      onlineClasses.append(url);
     }
   }
 };
