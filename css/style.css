@@ -233,3 +233,7 @@ span {
 .navy {
   background-color: navy;
 }
+
+.work-entry ul {
+  list-style-type: disc;
+}
