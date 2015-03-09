@@ -57,3 +57,9 @@ onlineCourseLinks.each(function(i) {
     $(this).remove();
   }
 });
+
+
+// Change background-color of "Let's Connect" banner
+var banner = $("#letsConnect h2");
+banner.removeClass("orange");
+banner.addClass("navy");

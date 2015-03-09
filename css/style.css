@@ -229,3 +229,7 @@ span {
   display: inline;
   padding: 5px;
 }
+
+.navy {
+  background-color: navy;
+}
