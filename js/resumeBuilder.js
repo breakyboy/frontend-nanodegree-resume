@@ -169,16 +169,16 @@ var work = {
       var job = work.jobs[i];
 
       // Formatting
-      var employer = HTMLworkEmployer.replace("%data%", job.employer);
-      var title    = HTMLworkTitle.replace("%data%", job.title);
-      var dates    = HTMLworkDates.replace("%data%", job.dates);
-      var loc      = HTMLworkLocation.replace("%data%", job.location);
-      var desc     = HTMLworkDescription.replace("%data%", job.description);
+      var employer   = HTMLworkEmployer.replace("%data%", job.employer);
+      var title      = HTMLworkTitle.replace("%data%", job.title);
+      var full_title = employer + title;
+      var dates      = HTMLworkDates.replace("%data%", job.dates);
+      var loc        = HTMLworkLocation.replace("%data%", job.location);
+      var desc       = HTMLworkDescription.replace("%data%", job.description);
 
       // Display
       $("#workExperience").append(HTMLworkStart);
-      $(".work-entry:last").append(employer);
-      $(".work-entry:last").append(title);
+      $(".work-entry:last").append(full_title);
       $(".work-entry:last").append(dates);
       $(".work-entry:last").append(loc);
       $(".work-entry:last").append(desc);
