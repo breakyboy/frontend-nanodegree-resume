@@ -58,7 +58,7 @@ var education = {
       location: "North Miami, FL",
       degree: "Associate of Arts",
       majors: [
-        "Focus in Computer Science"
+        "Computer Science"
       ],
       dates: 2009,
       url: "http://www.mdc.edu/"
