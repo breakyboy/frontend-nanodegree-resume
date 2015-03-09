@@ -214,3 +214,9 @@ span {
     display: block;
   }
 }
+
+/* User-defined customizations */
+.project-entry img {
+  max-height: 200px;
+  max-width: 250px;
+}
