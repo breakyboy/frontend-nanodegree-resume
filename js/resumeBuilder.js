@@ -131,11 +131,11 @@ var education = {
       oDates = HTMLonlineDates.replace("%data%", oDates);
 
       // Display
-      var onlineClasses = $("#education > h3:last");
-      onlineClasses.append(title);
-      onlineClasses.append(oSchool);
-      onlineClasses.append(oDates);
-      onlineClasses.append(url);
+      $("#education").append(HTMLschoolStart);
+      $(".education-entry:last").append(title);
+      $(".education-entry:last").append(oSchool);
+      $(".education-entry:last").append(oDates);
+      $(".education-entry:last").append(url);
     }
   }
 };
