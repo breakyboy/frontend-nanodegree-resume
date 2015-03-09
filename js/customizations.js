@@ -25,3 +25,10 @@ linkify(twitter, contactLinkClasses, twitterHref);
 var github = $("span:contains('github')").next();
 var githubHref = "http://www.github.com/" + github.text();
 linkify(github, contactLinkClasses, githubHref);
+
+
+// Prepend twitter handle with "@" if needed
+twitter = $("span:contains('twitter')").next();
+if (twitter.text()[0] !== "@") {
+  twitter.text("@" + twitter.text());
+}
