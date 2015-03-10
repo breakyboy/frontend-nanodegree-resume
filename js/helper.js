@@ -96,12 +96,14 @@ function initializeMap() {
 
     locations.push(bio.contacts.location);
 
-    for (var school in education.schools) {
-      locations.push(education.schools[school].location);
+    for (var i in education.schools) {
+      var school = education.schools[i];
+      locations.push(school.name + " " + school.location);
     }
 
-    for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
+    for (var j in work.jobs) {
+      var job = work.jobs[j];
+      locations.push(job.employer + " " + job.location);
     }
 
     return locations;
@@ -115,7 +117,7 @@ function initializeMap() {
   function createMapMarker(placeData) {
     var lat = placeData.geometry.location.lat();
     var lon = placeData.geometry.location.lng();
-    var name = placeData.formatted_address;
+    var name = placeData.name;
     var bounds = window.mapBounds;
 
     // marker is an object with additional data about the pin for a single location
@@ -125,11 +127,26 @@ function initializeMap() {
       title: name
     });
 
+    // Display photo in infoWindow if available
+    var photo = {};
+    if (typeof placeData.photos !== 'undefined') {
+      var p = placeData.photos[0];
+      photo.thumb = p.getUrl({'maxWidth': 300, 'maxHeight': 100});
+      photo.full = p.getUrl({'maxWidth': p.width, 'maxHeight': p.height});
+    }
+
+    // Generate contentString
+    var contentString = '<div style="text-align: center">';
+    if (!$.isEmptyObject(photo)) {
+      contentString += '<a href="' + photo.full + '"><img src="' + photo.thumb + '"></a>';
+    }
+    contentString += '<p><strong>' + name + '</strong></p></div>';
+
     // infoWindows are the little helper windows that open when you click
     // or hover over a pin on a map. They usually contain more information
     // about a location.
     var infoWindow = new google.maps.InfoWindow({
-      content: name
+      content: contentString
     });
 
     google.maps.event.addListener(marker, 'click', function() {
