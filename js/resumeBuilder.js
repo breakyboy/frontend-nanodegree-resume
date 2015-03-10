@@ -95,9 +95,10 @@ var education = {
 
       // Display
       $("#education").append(HTMLschoolStart);
-      $(".education-entry:last").append(name + degree);
-      $(".education-entry:last").append(dates);
-      $(".education-entry:last").append(loc);
+      var school_div = $(".education-entry:last");
+      school_div.append(name + degree);
+      school_div.append(dates);
+      school_div.append(loc);
 
       // Majors
       for (var j in school.majors) {
@@ -105,7 +106,7 @@ var education = {
         var major = HTMLschoolMajor.replace("%data%", school.majors[j]);
 
         // Display
-        $(".education-entry:last").append(major);
+        school_div.append(major);
       }
     }
 
@@ -123,9 +124,10 @@ var education = {
 
       // Display
       $("#education").append(HTMLschoolStart);
-      $(".education-entry:last").append(title + oSchool);
-      $(".education-entry:last").append(oDates);
-      $(".education-entry:last").append(url);
+      var course_div = $(".education-entry:last");
+      course_div.append(title + oSchool);
+      course_div.append(oDates);
+      course_div.append(url);
     }
   }
 };
